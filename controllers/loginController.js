@@ -15,7 +15,9 @@ let loginController = async (req,res)=>{
         bcrypt.compare(password, existingUser[0].password, function(err, result) {
             console.log(result)
             if(result){
-                res.send({error:"Login Successful"})
+                const { password: pass, ...rest } = existingUser[0]._doc;
+                res.send(rest)
+                // res.send({success:"Login Successful"})
             }else{
                 res.send({error:"Credencial is not valid"})
             }
