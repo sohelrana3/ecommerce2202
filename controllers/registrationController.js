@@ -47,20 +47,20 @@ let registrationController = async (req, res) => {
 
                     user.save();
 
-                    // const transporter = nodemailer.createTransport({
-                    //     service: "gmail",
-                    //     auth: {
-                    //         user: "expartdesigns5@gmail.com",
-                    //         pass: "aolz berp jnou uhkb",
-                    //     },
-                    // });
+                    const transporter = nodemailer.createTransport({
+                        service: "gmail",
+                        auth: {
+                            user: "expartdesigns5@gmail.com",
+                            pass: "aolz berp jnou uhkb",
+                        },
+                    });
 
-                    // const info = await transporter.sendMail({
-                    //     from: "expartdesigns5@gmail.com",
-                    //     to: email,
-                    //     subject: "Verify your Email",
-                    //     html: `<div style="display: flex;width: 600px;height: 200px;"> <div style="width: 50%;height: 100px;">Please Verify your email by click on this button <a href="https://www.figma.com/">Verify</a>${otp}</div></div>`,
-                    // });
+                    const info = await transporter.sendMail({
+                        from: "expartdesigns5@gmail.com",
+                        to: email,
+                        subject: "Verify your Email",
+                        html: `<div style="display: flex;width: 600px;height: 200px;"> <div style="width: 50%;height: 100px;">Please Verify your email by click on this button <a href="https://www.figma.com/">Verify</a>${otp}</div></div>`,
+                    });
 
                     res.send(user);
                 });
