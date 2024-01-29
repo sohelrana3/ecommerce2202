@@ -5,7 +5,11 @@ const nodemailer = require("nodemailer");
 // forotpassword function create
 
 const forgotpassword = (req, res) => {
-    res.send("forgotpassword")
+    const {email} = req.body;
+     
+    
+
+    res.send(email)
 };
 
 module.exports = forgotpassword;
