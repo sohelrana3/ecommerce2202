@@ -16,7 +16,7 @@ let loginController = async (req, res) => {
             existingUser[0].password,
             function (err, result) {
                 if (result) {
-                    console.log(existingUser[0]);
+                    
                     const { password, ...data } = existingUser[0]._doc;
                     res.send(data);
                 } else {
