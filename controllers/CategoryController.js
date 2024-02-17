@@ -9,7 +9,7 @@ const categoryController = (req, res) => {
             ownerId: ownerId,
         });
         catagoryData.save();
-        res.send({ success: "Catagory Create " });
+        res.send({ success: `${name}Catagory Create` });
     } catch (error) {
         console.log(error);
     }
